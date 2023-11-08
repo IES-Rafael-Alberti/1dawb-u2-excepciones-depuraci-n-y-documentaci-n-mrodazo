@@ -6,12 +6,12 @@ Escribir un programa que pregunte al usuario su edad y muestre por pantalla todo
 
 def comprobarNumero(numero: str) -> bool:
     """
-    Comprobar que se trata de un número entero mayor que 0.
+    Comprobar que se trata de un número entero .
     
     Args:
         numero (str): string que toma el valor del número introducido.
     Retorna:    
-        True o False dependiendo si el argumento 'número' es un entero mayor que 0.
+        True o False dependiendo si el argumento 'número' es un entero.
     """
     try:
         int(numero)
