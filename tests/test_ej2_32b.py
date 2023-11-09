@@ -1,5 +1,10 @@
 import pytest
-from src.ej2_32 import mostrarImpares
+from src.ej2_32b import mostrarImpares, comprobarNum
+
+def test_comprobarNum_ValueError():
+    with pytest.raises(ValueError):
+        comprobarNum(-6)
+
 
 @pytest.mark.parametrize(
     "num, expected",

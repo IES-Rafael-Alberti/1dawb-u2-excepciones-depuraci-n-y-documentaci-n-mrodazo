@@ -2,9 +2,12 @@
 Ejercicio 2.3.2
 Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla todos los números impares desde 1 hasta ese número separados por comas.
 
+En este caso no capturamos el error en la función
+
 """
-#Importamos el método comprobarNúmero donde se controla las excepciones
-from src.ej2_31 import comprobarNumero
+def comprobarNum (num):
+    if int(num) < 1:
+        raise ValueError
 
 
 def mostrarImpares (num: int) -> str:
@@ -30,11 +33,13 @@ def mostrarImpares (num: int) -> str:
 
 
 def main():
-   num = input("Introduzca un número entero positivo: ")
-   while comprobarNumero(num) != True:
-       num = input("Error. Introduzca un ENTERO POSITIVO: ")
-   num = int(num)
-   print (f"Esta es la cadena de todos los números impares: \n{mostrarImpares(num)}")
+    num = input("Introduzca un número entero positivo: ")
+    try: 
+       comprobarNum (num)
+    except ValueError:   
+        num = input("Error. Introduzca un ENTERO POSITIVO: ")
+    num = int(num)
+    print (f"Esta es la cadena de todos los números impares: \n{mostrarImpares(num)}")
 
 
 
