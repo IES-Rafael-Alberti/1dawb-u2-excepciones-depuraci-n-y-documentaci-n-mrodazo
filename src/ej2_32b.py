@@ -33,11 +33,19 @@ def mostrarImpares (num: int) -> str:
 
 
 def main():
-    num = input("Introduzca un número entero positivo: ")
-    try: 
-       comprobarNum (num)
-    except ValueError:   
-        num = input("Error. Introduzca un ENTERO POSITIVO: ")
+        
+    error = True
+    while error:
+        num = input("Introduzca un número entero positivo: ")
+        try: 
+            comprobarNum (num)
+            error = False
+        except ValueError:   
+            print("Error. No está introduciendo un NÚMERO ENTERO POSITIVO.")
+            
+        except Exception:
+            print("Error. No está introduciendo un NÚMERO ENTERO POSITIVO.")
+        
     num = int(num)
     print (f"Esta es la cadena de todos los números impares: \n{mostrarImpares(num)}")
 
